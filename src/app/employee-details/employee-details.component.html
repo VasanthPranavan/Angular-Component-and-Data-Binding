@@ -1,0 +1,37 @@
+
+<div>
+ <br>
+ <br>
+</div>
+<div class="container">     
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>Employee Id</th>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Dept</th>
+          <th>City</th>
+          <th>Email</th>
+        </tr>
+    </thead>
+    <tbody>
+      <tr myHighlighterDirective *ngFor="let emp of employee">
+        <td *ngIf="expression">{{emp.employeeId}}</td>
+        <td *ngIf="!expression"><input [(ngModel)] ="emp.employeeId"></td>
+        <td *ngIf="expression">{{emp.firstName}}</td>
+        <td *ngIf="!expression"><input [(ngModel)] ="emp.firstName"></td>
+        <td *ngIf="expression">{{emp.lastName}}</td>
+        <td *ngIf="!expression"><input [(ngModel)] ="emp.lastName"></td>
+        <td *ngIf="expression">{{emp.dept}}</td>
+        <td *ngIf="!expression"><input [(ngModel)] ="emp.dept"></td>
+        <td *ngIf="expression">{{emp.city}}</td>
+        <td *ngIf="!expression"><input [(ngModel)] ="emp.city"></td>
+        <td *ngIf="expression">{{emp.email}}</td>
+        <td *ngIf="!expression"><input [(ngModel)] ="emp.email"></td>
+        <button *ngIf="expression" (click)="EditEmp()">Edit</button>
+        <button *ngIf="!expression" (click)="UpdateEmp()">Update</button>
+      </tr> 
+    </tbody>
+    </table>
+  </div>
